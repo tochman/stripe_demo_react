@@ -1,23 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-import { StripeProvider, Elements, CardElement } from 'react-stripe-elements';
+import StripeForm from './StripeForm'
+import {
+  injectStripe,
+  Elements
+} from 'react-stripe-elements';
 
-
-function App() {
-  return (
-    <>
-      <StripeProvider apiKey="pk_test_QicERB8w3kyqaYW3hUUQylRH">
+class App extends Component {
+  render() {
+    return (
+      <>
         <Elements>
-          <label>
-            Card details
-            <CardElement style={{ base: { fontSize: '12px' } }} />
-          </label>
-
+          <StripeForm />
 
         </Elements>
-      </StripeProvider>
-    </>
-  );
+      </>
+    );
+  }
+
 }
 
 export default App;
